@@ -33,4 +33,36 @@ class ProjectsTest {
         assertEquals(expected, fibonacci)        
     }
 
+    @Test
+    fun isPrimeTest() {
+        var project = Projects()
+        var n = 1
+        assertEquals(false, project.isPrime(n)) 
+        n = 2                
+        assertEquals(true, project.isPrime(n)) 
+        n = 3                
+        assertEquals(true, project.isPrime(n)) 
+        n = 9                
+        assertEquals(false, project.isPrime(n))  
+        n = 71                
+        assertEquals(true, project.isPrime(n))         
+        n = 91                
+        assertEquals(false, project.isPrime(n))         
+    }
+
+    @Test
+    fun primeFactorizeTest() {
+        var project = Projects()
+        var n: Int = 156
+        var primeFacs: MutableList<Int> = project.primeFactorizeN(n)
+        var expected: MutableList<Int> = mutableListOf<Int>(2, 2, 3, 13)
+        assertEquals(expected, primeFacs) 
+
+        n = 9999
+        primeFacs = project.primeFactorizeN(n)
+        expected = mutableListOf<Int>(3, 3, 11, 101)
+        assertEquals(expected, primeFacs) 
+
+    }
+
 }

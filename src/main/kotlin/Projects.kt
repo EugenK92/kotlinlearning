@@ -44,8 +44,44 @@ class Projects {
         for (i in 1..n) {
             result.add(fibonacciResursive(i))
         }
-        println(result)
         return result
+    }
+
+    fun isPrime(n: Int): Boolean {
+        if (n == 1) return false;
+        if (n == 2) return true;
+        var end: Float = sqrt(n.toFloat());
+        for (i in 3..end.toInt()) {
+            if (n % i == 0) return false
+        } 
+        return true
+    }
+
+    fun primeFactorizeN(n: Int): MutableList<Int> {
+        var result: MutableList<Int> = mutableListOf<Int>()
+        var calc = n;
+        if (isPrime(n)) {
+            result.add(n)
+        }
+        else {
+            var i: Int = 2
+            while (i < n) {
+                if (isPrime(i)) {
+                    if (calc % i == 0) {
+                        result.add(i)
+                        calc = calc / i
+                    }
+                    else {
+                        i++
+                    }
+                }
+                else {
+                    i++
+                }
+            }
+        }
+
+        return result;
     }
 
 }
