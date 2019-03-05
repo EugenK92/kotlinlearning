@@ -97,6 +97,10 @@ class Projects {
         return result
     }
 
-    
+    fun costOfTile(width: Int, heigth: Int, costPerTile: Float): Float {
+        var result: Float = 0f
+        result = width * heigth * costPerTile
+        return result
+    }
 
 }

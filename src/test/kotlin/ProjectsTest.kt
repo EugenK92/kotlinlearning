@@ -76,4 +76,15 @@ class ProjectsTest {
         assertEquals(expected, primeNums) 
     }
 
+    @Test
+    fun costOfTileTest() {
+        var project = Projects()
+        var width = 20
+        var height = 50
+        var cost = 20.77f
+        var result: Float = project.costOfTile(width, height, cost)
+        var expected: Float = 20770f
+        assertEquals(expected, result)
+    }
+
 }
