@@ -69,7 +69,7 @@ class Projects {
                 if (isPrime(i)) {
                     if (calc % i == 0) {
                         result.add(i)
-                        calc = calc / i
+                        calc /= i
                     }
                     else {
                         i++
@@ -89,8 +89,6 @@ class Projects {
         var index = 2;
         while (result.size < n) {
             if (isPrime(index)) {
-                println(index)
-                println(isPrime(index))
                 result.add(index)
             }
             index++
@@ -98,5 +96,7 @@ class Projects {
 
         return result
     }
+
+    
 
 }

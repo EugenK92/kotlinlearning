@@ -10,6 +10,8 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .settings/org.eclipse.jdt.apt.core.prefs
+kotlintest.iml
+.idea/
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
