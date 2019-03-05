@@ -103,4 +103,12 @@ class Projects {
         return result
     }
 
+    fun calculateMortgage(wholeCost: Float, timeValue: Int, rate: Float): String {
+        var result: String = ""
+        var interest = wholeCost * (rate / 100) * timeValue / 100 * 12
+        println(interest)
+
+        return result
+    }
+
 }

@@ -79,12 +79,16 @@ class ProjectsTest {
     @Test
     fun costOfTileTest() {
         var project = Projects()
-        var width = 20
-        var height = 50
-        var cost = 20.77f
-        var result: Float = project.costOfTile(width, height, cost)
+        var result: Float = project.costOfTile(20, 50, 20.77f)
         var expected: Float = 20770f
         assertEquals(expected, result)
     }
 
+    @Test
+    fun calculateMortgageTest() {
+        var project = Projects()
+        var result: String = project.calculateMortgage(10400f, 24, 2.5f)
+        var expected: String = "Monthly:444,58;Interest:269,89;EndCost:10,669,89"
+        assertEquals(expected, result)
+    }
 }
