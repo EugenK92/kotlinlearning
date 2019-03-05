@@ -42,8 +42,10 @@ class ProjectsTest {
         assertEquals(true, project.isPrime(n)) 
         n = 3                
         assertEquals(true, project.isPrime(n)) 
-        n = 9                
+        n = 4                
         assertEquals(false, project.isPrime(n))  
+        n = 9                
+        assertEquals(false, project.isPrime(n))        
         n = 71                
         assertEquals(true, project.isPrime(n))         
         n = 91                
@@ -63,6 +65,15 @@ class ProjectsTest {
         expected = mutableListOf<Int>(3, 3, 11, 101)
         assertEquals(expected, primeFacs) 
 
+    }
+
+    @Test 
+    fun getNPrimeNumbersTest() {
+        var project = Projects()
+        var n: Int = 10
+        var primeNums: MutableList<Int> = project.getNPrimeNumbers(n)
+        var expected: MutableList<Int> = mutableListOf<Int>(2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
+        assertEquals(expected, primeNums) 
     }
 
 }

@@ -51,7 +51,7 @@ class Projects {
         if (n == 1) return false;
         if (n == 2) return true;
         var end: Float = sqrt(n.toFloat());
-        for (i in 3..end.toInt()) {
+        for (i in 2..end.toInt()) {
             if (n % i == 0) return false
         } 
         return true
@@ -82,6 +82,21 @@ class Projects {
         }
 
         return result;
+    }
+
+    fun getNPrimeNumbers(n: Int): MutableList<Int> {
+        var result: MutableList<Int> = mutableListOf<Int>()
+        var index = 2;
+        while (result.size < n) {
+            if (isPrime(index)) {
+                println(index)
+                println(isPrime(index))
+                result.add(index)
+            }
+            index++
+        }
+
+        return result
     }
 
 }
