@@ -163,4 +163,17 @@ class Projects {
         return result
     }
 
+    /**
+     * direction 1: EU -> US
+     * direction 2: US -> EU
+     */
+    fun unitConverter(unit: String, value: Float, direction: Int = 1): Float {
+        var result = when(unit) {
+            "temp" -> if (direction == 1) value * 9/5 + 32 else (value - 32) * 5/9
+            else -> 0f
+        }
+
+        return result
+    }
+
 }

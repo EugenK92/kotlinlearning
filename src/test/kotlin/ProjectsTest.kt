@@ -152,4 +152,20 @@ class ProjectsTest {
         expected = 0f
         assertEquals(expected, result)
     }
+
+    @Test
+    fun unitConverterTest() {
+        var project = Projects()
+        var result: Float = project.unitConverter("temp", 40f)
+        var expected: Float = 104f
+        assertEquals(expected, result)
+
+        result = project.unitConverter("temp", -40f, 2)
+        expected = -40f
+        assertEquals(expected, result)
+
+        result = project.unitConverter("temp", 50f, 2)
+        expected = 10f
+        assertEquals(expected, result)
+    }
 }
