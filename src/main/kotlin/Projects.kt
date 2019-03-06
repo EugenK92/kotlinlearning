@@ -33,16 +33,16 @@ class Projects {
         return e.toString().substring(0, n + 2).toDouble();
     }
 
-    fun fibonacciResursive(n: Int): Int {
+    private fun fibonacciRecursive(n: Int): Int {
         if (n == 0) return 0
         if (n == 1 || n == 2) return 1
-        return fibonacciResursive(n - 1) + fibonacciResursive(n - 2)
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
     }
 
     fun fibonacciToN(n: Int): MutableList<Int> {
         var result: MutableList<Int> = mutableListOf<Int>()
         for (i in 1..n) {
-            result.add(fibonacciResursive(i))
+            result.add(fibonacciRecursive(i))
         }
         return result
     }
@@ -151,6 +151,16 @@ class Projects {
         return result
     }
 
+    fun calculator(operation: String, firstValue: Float, secondValue: Float = 0f): Float {
+        var result = when(operation) {
+            "+" -> firstValue + secondValue
+            "-" -> firstValue - secondValue
+            "*" -> firstValue * secondValue
+            "/" -> if(secondValue != 0f) firstValue / secondValue else 0f
+            else -> 0f
+        }
 
+        return result
+    }
 
 }

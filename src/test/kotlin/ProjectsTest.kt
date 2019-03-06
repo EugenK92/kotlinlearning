@@ -124,4 +124,32 @@ class ProjectsTest {
         expected = 25
         assertEquals(expected, result)
     }
+
+    @Test
+    fun calculatorTest() {
+        var project = Projects()
+        var result: Float = project.calculator("+", 1f, 1f)
+        var expected: Float = 2f
+        assertEquals(expected, result)
+
+        result = project.calculator("-", 1f, 1f)
+        expected = 0f
+        assertEquals(expected, result)
+
+        result = project.calculator("*", 1f, 1f)
+        expected = 1f
+        assertEquals(expected, result)
+
+        result = project.calculator("/", 1f, 1f)
+        expected = 1f
+        assertEquals(expected, result)
+
+        result = project.calculator("/", 1f, 0f)
+        expected = 0f
+        assertEquals(expected, result)
+
+        result = project.calculator("wffw", 1f, 1f)
+        expected = 0f
+        assertEquals(expected, result)
+    }
 }
