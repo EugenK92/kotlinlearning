@@ -110,6 +110,25 @@ class Projects {
         return result
     }
 
+    fun changeAutomat(cost: Float, money: Float): List<Int> {
+        var result:  MutableList<Int> = mutableListOf<Int>()
+        var diff: Float = money - cost
+        diff = (Math.round(diff.toDouble() * 1000.0) / 1000.0).toFloat() * 100
+        val moneyValues: IntArray = intArrayOf(50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1)
+        var i: Int = 0
+        while (diff > 0) {
+            if (diff >= moneyValues[i]) {
+                result.add(moneyValues[i])
+                diff -= moneyValues[i]
+            }
+            else {
+                i++
+            }
+        }
+
+        return result
+    }
+
     fun decimalToBinary(n: Int): List<Int> {
         var remainder: MutableList<Int> = mutableListOf<Int>()
         var quotient = n
@@ -126,11 +145,12 @@ class Projects {
         var result: Int = 0
 
         var nAsString = n.toString().reversed()
-        println(nAsString)
         for (i in 0 until nAsString.length) {
             result += (nAsString[i].toString().toInt() * 2.0.pow(i)).toInt()
         }
         return result
     }
+
+
 
 }

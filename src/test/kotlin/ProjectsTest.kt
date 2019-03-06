@@ -90,6 +90,18 @@ class ProjectsTest {
     }
 
     @Test
+    fun changeAutomatTest() {
+        var project = Projects()
+        var result: List<Int> = project.changeAutomat(42.27f, 50f)
+        var expected: List<Int> = listOf(500, 200, 50, 20 , 2, 1)
+        assertEquals(expected, result)
+
+        result = project.changeAutomat(5289f, 10000f)
+        expected = listOf(50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 20000, 1000, 100)
+        assertEquals(expected, result)
+    }
+
+    @Test
     fun decimalToBinaryTest() {
         var project = Projects()
         var result: List<Int> = project.decimalToBinary(13)
