@@ -1,6 +1,6 @@
 package com.eugene.kotlin
 
-import kotlin.math.* 
+import kotlin.math.*
 
 class Projects {
 
@@ -103,11 +103,33 @@ class Projects {
         return result
     }
 
-    fun calculateMortgage(wholeCost: Float, timeValue: Int, rate: Float): String {
+    fun calculateMortgage(capital: Float, interval: Int, rate: Float): String {
         var result: String = ""
-        var interest = wholeCost * (rate / 100) * timeValue / 100 * 12
-        println(interest)
 
+
+        return result
+    }
+
+    fun decimalToBinary(n: Int): List<Int> {
+        var remainder: MutableList<Int> = mutableListOf<Int>()
+        var quotient = n
+        while (quotient > 0) {
+            remainder.add(quotient % 2)
+            quotient /= 2
+        }
+
+        var resultList = remainder as List<Int>
+        return resultList.asReversed()
+    }
+
+    fun binaryToDecimal(n: Long): Int {
+        var result: Int = 0
+
+        var nAsString = n.toString().reversed()
+        println(nAsString)
+        for (i in 0 until nAsString.length) {
+            result += (nAsString[i].toString().toInt() * 2.0.pow(i)).toInt()
+        }
         return result
     }
 

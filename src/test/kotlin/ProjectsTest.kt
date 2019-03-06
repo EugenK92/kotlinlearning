@@ -84,11 +84,32 @@ class ProjectsTest {
         assertEquals(expected, result)
     }
 
-    @Test
+    //@Test
     fun calculateMortgageTest() {
+
+    }
+
+    @Test
+    fun decimalToBinaryTest() {
         var project = Projects()
-        var result: String = project.calculateMortgage(10400f, 24, 2.5f)
-        var expected: String = "Monthly:444,58;Interest:269,89;EndCost:10,669,89"
+        var result: List<Int> = project.decimalToBinary(13)
+        var expected: List<Int> = listOf(1, 1, 0, 1)
+        assertEquals(expected, result)
+
+        result = project.decimalToBinary(174)
+        expected = listOf(1, 0, 1, 0, 1, 1, 1, 0)
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun binaryToDecimalTest() {
+        var project = Projects()
+        var result: Int = project.binaryToDecimal(111001)
+        var expected: Int = 57
+        assertEquals(expected, result)
+
+        result = project.binaryToDecimal(11001)
+        expected = 25
         assertEquals(expected, result)
     }
 }
